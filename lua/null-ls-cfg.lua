@@ -101,7 +101,6 @@ null_ls.setup({
     null_ls.builtins.diagnostics.rstcheck,
     null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.diagnostics.saltlint,
-    null_ls.builtins.diagnostics.selene,
     null_ls.builtins.diagnostics.semgrep,
     null_ls.builtins.diagnostics.solhint,
     null_ls.builtins.diagnostics.spectral,
