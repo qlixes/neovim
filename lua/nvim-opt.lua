@@ -65,7 +65,7 @@ vim.opt.wrap = true
 vim.opt.showbreak = "↪"
 vim.opt.showmatch = true
 vim.opt.wildmenu = true
-vim.opt.wildmode = {"list","longest"}
+vim.opt.wildmode = { "list", "longest" }
 
 vim.g.loaded_netrwPlugin = 0
 
