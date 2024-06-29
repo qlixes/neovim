@@ -70,3 +70,6 @@ vim.opt.wildmode = { "list", "longest" }
 vim.g.loaded_netrwPlugin = 0
 
 vim.cmd("hi! SignColumn guibg=NONE cterm=NONE term=NONE")
+vim.cmd("hi! VertSplit guibg=NONE cterm=NONE term=NONE")
+vim.cmd("hi! Normal guibg=NONE cterm=NONE term=NONE")
+vim.cmd("hi! LineNr guibg=NONE cterm=NONE term=NONE")

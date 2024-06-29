@@ -1,17 +1,26 @@
+pcall(require('telescope').load_extension, 'fzf')
 local telescope = require("telescope")
 local builtin = require('telescope.builtin')
 local actions = require("telescope.actions")
+local themes = require("telescope.themes")
 
 telescope.setup({
-    extensions = {
-        file_browser = {
-            -- disables netrw and use telescope-file-browser in its place
-            hijack_netrw = true,
-        },
+  defaults = {
+    preview = false,
+  },
+  extensions = {
+      file_browser = {
+          -- disables netrw and use telescope-file-browser in its place
+          hijack_netrw = true,
+      },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
     },
+  },
 })
 
-pcall(require('telescope').load_extension, 'fzf')
 
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })

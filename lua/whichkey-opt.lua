@@ -1,6 +1,6 @@
-local wk = require("which-key")
+local whichkey = require("which-key")
 
-wk.setup({
+whichkey.setup({
     plugins = {},
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo

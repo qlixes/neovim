@@ -1,39 +1,68 @@
-local lsp_zero = require("lsp-zero")
-local lsp_format = require("lsp-format")
+local lspzero = require('lsp-zero')
+local cmp = require("cmp")
+local cmp_action = require('lsp-zero').cmp_action()
+local mason = require("mason")
+local masonlspconfig = require("mason-lspconfig")
+local lspconfig = require('lspconfig')
 
-lsp_zero.on_attach(function(client, bufnr)
-	lsp_zero.default_keymaps({ buffer = bufnr })
-	lsp_zero.buffer_autoformat()
-	lsp_format.on_attach(client, bufnr)
-end)
+require('luasnip.loaders.from_vscode').lazy_load()
 
-lsp_zero.set_sign_icons({
-	error = '✘',
-	warn = '▲',
-	hint = '⚑',
-	info = '»'
-})
+lspzero.on_attach(
+  function(client, bufnr)
+    lspzero.default_keymaps({buffer = bufnr})
+    lspzero.buffer_autoformat()
+  end
+)
 
-lsp_zero.format_on_save({
+lspzero.format_on_save({
 	format_opts = {
 		async = false,
 		timeout_ms = 10000,
 	},
 })
 
-require('mason').setup({
-	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗"
-		}
-	}
+lspzero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
 })
-require('mason-lspconfig').setup({
-	ensure_installed = { "tsserver", "rust_analyzer", "lua_ls" },
-	handlers = {
-		lsp_zero.default_setup,
-	},
-	automatic_installation = false,
+
+mason.setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
 })
+
+masonlspconfig.setup({
+  ensure_installed = {'tsserver', 'rust_analyzer'},
+  handlers = {
+    lspzero.default_setup,
+  },
+  automatic_installation = false,
+})
+
+cmp.setup({
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
+  fields = {'menu', 'abbr', 'kind'},
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  }),
+})
+
