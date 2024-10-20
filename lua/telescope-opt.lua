@@ -7,6 +7,9 @@ local themes = require("telescope.themes")
 telescope.setup({
   defaults = {
     preview = false,
+    file_ignore_patterns = {
+      "node_modules", "vendor",
+    },
   },
   extensions = {
       file_browser = {

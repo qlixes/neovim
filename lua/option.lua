@@ -68,6 +68,7 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = { "list", "longest" }
 
 vim.g.loaded_netrwPlugin = 0
+vim.o.background="dark"
 
 vim.cmd("hi! SignColumn guibg=NONE cterm=NONE term=NONE")
 vim.cmd("hi! VertSplit guibg=NONE cterm=NONE term=NONE")
