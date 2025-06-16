@@ -1,7 +1,7 @@
 return {
     "neovim/nvim-lspconfig", -- Collection of configurations for built-in LSP client
-    cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-    event = {'BufReadPre', 'BufNewFile'},
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         {
             "williamboman/mason.nvim",
@@ -9,6 +9,7 @@ return {
         },
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp
+        "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
@@ -18,7 +19,7 @@ return {
         },
         "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
         {
-            "L3MON4D3/LuaSnip", -- Snippets plugin
+            "L3MON4D3/LuaSnip",     -- Snippets plugin
             version = "v2.*",
             build = "make install_jsregexp",
             dependencies = {

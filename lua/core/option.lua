@@ -12,7 +12,7 @@ vim.opt.wrap=true
 vim.opt.ignorecase=true
 vim.opt.cursorline=true
 vim.opt.termguicolors=true
-vim.opt.background="dark"
+-- vim.opt.background="dark"
 vim.opt.signcolumn="yes"
 vim.opt.backspace={ "start", "eol", "indent" }
 vim.opt.completeopt = { "menu,menuone", "preview", "noselect", "noinsert" }
@@ -28,7 +28,7 @@ vim.opt.guifont="Meslo:h10"
 vim.opt.updatetime=800
 vim.o.undofile=false
 -- Set highlight on search
-vim.o.hlsearch = fals
+vim.o.hlsearch = false
 
 -- Enable break indent
 vim.o.breakindent = true

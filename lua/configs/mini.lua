@@ -15,4 +15,4 @@ require('mini.bracketed').setup({
   yank       = { suffix = 'y', options = {} },
 })
 
-require('mini.animate').setup()
+-- require('mini.animate').setup()

@@ -21,11 +21,16 @@ null_ls.setup({
         null_ls.builtins.code_actions.gitsigns,
         null_ls.builtins.code_actions.gomodifytags,
         null_ls.builtins.code_actions.impl,
+        null_ls.builtins.code_actions.refactoring,
+        null_ls.builtins.code_actions.statix,
+        null_ls.builtins.code_actions.textlint,
+        null_ls.builtins.code_actions.ts_node_action,
 
         null_ls.builtins.formatting.gofmt,
         null_ls.builtins.formatting.goimports,
-        null_ls.builtins.diagnostics.golangci_lint,
         null_ls.builtins.formatting.golines,
         null_ls.builtins.formatting.dart_format,
+
+        null_ls.builtins.diagnostics.golangci_lint,
     },
 })

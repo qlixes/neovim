@@ -1,4 +1,12 @@
-require('fzf-lua').setup({'fzf-vim'})
+require('fzf-lua').setup({
+    "fzf-vim",
+    files = {
+        cmd = 'rg --files --no-hidden --follow --no-ignore-exclude --no-ignore-global --no-ignore-dot --no-ignore-files --no-ignore-vcs',
+    },
+    git = {
+        file_icons = true,
+    },
+})
 
 
 vim.keymap.set('n', '<leader>ff', '<cmd>FzfLua files<CR>', { desc = 'Telescope find files' })
