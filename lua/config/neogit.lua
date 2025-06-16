@@ -1,3 +1,5 @@
 local items = require("neogit")
 
-items.setup({})
+items.setup({
+	graph_style = "unicode",
+})
