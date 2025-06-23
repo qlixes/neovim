@@ -1,3 +1,7 @@
 local items = require("ibl")
 
-items.setup()
+items.setup({
+    indent = {
+        char = "┊",
+    },
+})
