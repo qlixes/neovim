@@ -4,7 +4,7 @@ items.setup({
     "fzf-vim",
     files = {
         cmd =
-        'rg --files --no-hidden --follow --no-ignore-exclude --no-ignore-global --no-ignore-dot --no-ignore-files --no-ignore-vcs',
+        "rg --files --no-hidden --follow --no-ignore-exclude --no-ignore-global --no-ignore-dot --no-ignore-files --no-ignore-vcs --smart-case -g '!{.git,node_modules,vendor,generated}/'",
     },
     git = {
         file_icons = true,

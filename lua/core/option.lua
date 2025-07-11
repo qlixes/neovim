@@ -33,13 +33,16 @@ vim.opt.splitkeep = "cursor"
 vim.opt.swapfile = false
 vim.opt.lazyredraw = true
 vim.opt.path:append({ "**" })
-vim.opt.wildignore:append({ "*/node_nodules/*", "*/vendor/*" })
+vim.opt.wildignore:append({ "*/node_nodules/*", "*/vendor/*", "*/.git/*" })
 vim.opt.mouse = ""
-vim.opt.guifont = "Meslo:h10"
+vim.opt.guifont = "Roboto Mono:h10"
 vim.opt.updatetime = 800
-vim.o.undofile = false
--- Set highlight on search
-vim.o.hlsearch = false
+vim.opt.hlsearch = false
+vim.opt.undofile = false
+vim.opt.clipboard = unnamedplus
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.opt.breakindent = true

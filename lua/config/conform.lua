@@ -1,6 +1,6 @@
-local items = require("conform")
+local conform = require("conform")
 
-items.setup({
+conform.setup({
     default_format_opts = {
         lsp_format = "fallback",
     },
@@ -12,8 +12,15 @@ items.setup({
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
     callback = function(args)
-        require("conform").format({ bufnr = args.buf })
+        vim.lsp.buf.format({
+            async = false,
+        })
+
+        require("conform").format({
+            bufnr = args.buf,
+        })
+
+        require("lint").try_lint()
     end,
 })
