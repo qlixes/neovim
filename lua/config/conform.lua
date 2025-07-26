@@ -4,23 +4,15 @@ conform.setup({
     default_format_opts = {
         lsp_format = "fallback",
     },
+    formatters_by_ft = {
+        blade = {
+            "blade-formatter",
+        },
+    },
     format_on_save = {
-        timeout_ms = 500,
+        timeout_ms = 2000,
+        lsp_fallback = true,
         lsp_format = "fallback",
         async = false,
     },
-})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function(args)
-        vim.lsp.buf.format({
-            async = false,
-        })
-
-        require("conform").format({
-            bufnr = args.buf,
-        })
-
-        require("lint").try_lint()
-    end,
 })

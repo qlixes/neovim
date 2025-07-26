@@ -3,7 +3,4 @@ return {
     event = {
         "InsertEnter",
     },
-    dependencies = {
-        "hrsh7th/nvim-cmp",
-    },
 }

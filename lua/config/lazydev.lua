@@ -1,11 +1,7 @@
-local items = require("lazydev")
+local lazydev = require("lazydev")
 
-items.setup({
+lazydev.setup({
     library = {
         "lazy.nvim",
     },
-    integrations = {
-        lspconfig = true,
-        cmp = true,
-    }
 })

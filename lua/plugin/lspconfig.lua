@@ -3,24 +3,21 @@ return {
     dependencies = {
         {
             "saghen/blink.cmp",
-            build = "cargo build --release",
+            version = "1.*",
             dependencies = {
                 "rafamadriz/friendly-snippets",
             },
             event = {
                 "InsertEnter",
             },
-            opts_extend = {
-                "sources.default",
-            },
         },
     },
     {
         "L3MON4D3/LuaSnip",
+        version = "2.*",
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
-        version = "2.*",
         build = "make install_jsregexp",
     },
 }

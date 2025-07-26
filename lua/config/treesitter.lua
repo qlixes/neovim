@@ -30,5 +30,6 @@ items.setup({
         "dockerfile",
         "gitignore",
         "query",
+        "blade",
     },
 })
